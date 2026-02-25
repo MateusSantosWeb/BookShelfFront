@@ -73,7 +73,7 @@ function ProximaMeta({ usuarioId }) {
   };
 
   const handleRemover = async (id) => {
-    if (!confirm('Deseja remover este livro da lista?')) return;
+    if (!window.confirm('Deseja remover este livro da lista?')) return;
 
     try {
       setErro('');
