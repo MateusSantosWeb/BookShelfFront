@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Cores principais */
+  --ruby: #E11D48;
+  --ruby-dark: #BE123C;
+  --rose-ivory: #FFF5F7;
+  --rose-light: #FFE4E9;
+  --rose-pink: #FFC0D3;
+  --white: #FFFFFF;
+  --text-dark: #4A1D34;
+  --text-medium: #8B5A6F;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background: var(--rose-light);
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header/Navegação */
+.navbar {
+  background: var(--ruby);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--white);
+  font-style: italic;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.navbar-menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: opacity 0.3s;
+}
+
+.navbar-menu a:hover {
+  opacity: 0.8;
+}
+
+/* Cards e Containers */
+.card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.header-title {
+  background: var(--ruby);
+  color: var(--white);
+  padding: 20px 40px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(225, 29, 72, 0.3);
+}
+
+/* Botões */
+.btn {
+  background: var(--ruby);
+  color: var(--white);
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 3px 6px rgba(225, 29, 72, 0.3);
+}
+
+.btn:hover {
+  background: var(--ruby-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(225, 29, 72, 0.4);
+}
+
+.btn-secondary {
+  background: var(--rose-pink);
+  color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+  background: #FF9BB8;
+}
+
+/* Inputs */
+.input-field {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid var(--rose-pink);
+  border-radius: 10px;
+  font-size: 16px;
+  background: var(--white);
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: var(--ruby);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--ruby);
+  font-size: 18px;
+}
+
+/* Grid de livros */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+.book-card {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(225, 29, 72, 0.2);
+}
+
+.book-cover {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.book-info {
+  text-align: left;
+}
+
+.book-number {
+  color: var(--ruby);
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.book-days {
+  color: var(--ruby);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.book-author {
+  color: var(--text-medium);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Estrelas */
+.stars {
+  display: flex;
+  gap: 3px;
+  font-size: 18px;
+  color: #FFD700;
+}
+
+/* Emojis de reação */
+.reaction-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.emoji-btn {
+  font-size: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.2s;
+  filter: grayscale(100%);
+  opacity: 0.4;
+}
+
+.emoji-btn:hover {
+  transform: scale(1.2);
+}
+
+.emoji-btn.active {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Grid do calendário */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.month-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+.month-name {
+  color: var(--ruby);
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.month-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--rose-pink);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Grid alfabeto */
+.alphabet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.letter-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: var(--white);
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.letter {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--ruby);
+  min-width: 40px;
+}
+
+.letter-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid var(--rose-pink);
+  border-radius: 8px;
+  outline: none;
+}
+
+/* Meta de leitura */
+.meta-container {
+  text-align: center;
+}
+
+.progress-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 15px solid var(--rose-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--ruby);
+  margin: 30px auto;
+}
+
+.genres-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.genre-item {
+  font-size: 20px;
+  color: var(--ruby);
+  font-weight: 600;
+}
+
+/* Sistema de avaliação */
+.avaliacao-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.flowchart {
+  flex: 1;
+  padding: 30px;
+}
+
+.validation-system {
+  flex: 1;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.validation-title {
+  color: var(--ruby);
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.star-definition {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+  padding: 12px;
+  background: var(--white);
+  border-radius: 10px;
+}
+
+.star-definition .stars {
+  min-width: 120px;
+}
+
+.star-text {
+  color: var(--text-dark);
+  font-size: 14px;
+  text-align: left;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navbar-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .alphabet-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .avaliacao-container {
+    flex-direction: column;
+  }
+}
