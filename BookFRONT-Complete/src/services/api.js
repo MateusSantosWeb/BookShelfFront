@@ -1,4 +1,4 @@
-const DEFAULT_PROD_API_BASE_URL = 'https://book-2-m704.onrender.com';
+const DEFAULT_PROD_API_BASE_URL = 'https://bookshelfback.onrender.com';
 const rawApiBaseUrl = process.env.REACT_APP_API_BASE_URL?.trim();
 const normalizedApiBaseUrl = rawApiBaseUrl?.replace(/^['"]|['"]$/g, '');
 const isProductionBuild = process.env.NODE_ENV === 'production';
