@@ -15,7 +15,9 @@ function Biblioteca({ usuarioId }) {
     genero: '',
     diasLeitura: 1,
     avaliacao: 1,
-    coracoes: 1
+    coracoes: 1,
+    fogos: 1,
+    humor: 1
   });
 
   useEffect(() => {
@@ -37,7 +39,9 @@ function Biblioteca({ usuarioId }) {
           diasLeitura: livro.tempoLeituraDias,
           avaliacao: livro.estrelas,
           favorito: livro.favorito,
-          coracoes: livro.coracoes
+          coracoes: livro.coracoes,
+          fogos: livro.fogos,
+          humor: livro.humor
         }));
 
         setLivros(livrosNormalizados);
@@ -52,6 +56,7 @@ function Biblioteca({ usuarioId }) {
   }, [usuarioId]);
 
   const renderStars = (rating) => '⭐'.repeat(rating);
+  const moodEmojis = ['😢', '😐', '🙂', '😊', '😍'];
 
   const iniciarEdicao = (livro) => {
     setEditandoId(livro.id);
@@ -61,7 +66,9 @@ function Biblioteca({ usuarioId }) {
       genero: livro.genero || '',
       diasLeitura: livro.diasLeitura || 1,
       avaliacao: livro.avaliacao || 1,
-      coracoes: livro.coracoes || 1
+      coracoes: livro.coracoes || 1,
+      fogos: livro.fogos || 1,
+      humor: livro.humor || 1
     });
   };
 
@@ -73,7 +80,9 @@ function Biblioteca({ usuarioId }) {
       genero: '',
       diasLeitura: 1,
       avaliacao: 1,
-      coracoes: 1
+      coracoes: 1,
+      fogos: 1,
+      humor: 1
     });
   };
 
@@ -88,7 +97,9 @@ function Biblioteca({ usuarioId }) {
         genero: formEdicao.genero.trim() || null,
         tempoLeituraDias: Number(formEdicao.diasLeitura),
         estrelas: Number(formEdicao.avaliacao),
-        coracoes: Number(formEdicao.coracoes)
+        coracoes: Number(formEdicao.coracoes),
+        fogos: Number(formEdicao.fogos),
+        humor: Number(formEdicao.humor)
       });
 
       setLivros((prev) =>
@@ -101,7 +112,9 @@ function Biblioteca({ usuarioId }) {
                 genero: formEdicao.genero.trim(),
                 diasLeitura: Number(formEdicao.diasLeitura),
                 avaliacao: Number(formEdicao.avaliacao),
-                coracoes: Number(formEdicao.coracoes)
+                coracoes: Number(formEdicao.coracoes),
+                fogos: Number(formEdicao.fogos),
+                humor: Number(formEdicao.humor)
               }
             : livro
         )
@@ -201,7 +214,7 @@ function Biblioteca({ usuarioId }) {
         }
       `}</style>
 
-      <div className="header-gradient" style={{
+      <div className="header-gradient biblioteca-hero" style={{
         color: 'white',
         padding: '40px',
         borderRadius: '0',
@@ -214,10 +227,10 @@ function Biblioteca({ usuarioId }) {
           marginBottom: '10px',
           animation: 'float 3s infinite',
           filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.3))'
-        }}>
+        }} className="biblioteca-hero-icon">
           📚
         </div>
-        <h1 style={{
+        <h1 className="biblioteca-hero-title" style={{
           fontSize: '48px',
           fontWeight: 'bold',
           margin: 0,
@@ -384,8 +397,16 @@ function Biblioteca({ usuarioId }) {
                       {renderStars(livro.avaliacao)}
                     </div>
 
-                    <div style={{ display: 'flex', gap: '4px', fontSize: '18px', marginBottom: '14px' }}>
+                    <div style={{ display: 'flex', gap: '4px', fontSize: '18px', marginBottom: '10px' }}>
                       {'💗'.repeat(livro.coracoes || 0)}
+                    </div>
+
+                    <div style={{ display: 'flex', gap: '4px', fontSize: '18px', marginBottom: '10px' }}>
+                      {'🔥'.repeat(livro.fogos || 0)}
+                    </div>
+
+                    <div style={{ display: 'flex', gap: '6px', fontSize: '20px', marginBottom: '10px' }}>
+                      {livro.humor ? moodEmojis[livro.humor - 1] : ''}
                     </div>
                   </div>
                 )}

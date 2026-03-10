@@ -144,6 +144,14 @@ body {
   font-size: 18px;
 }
 
+/* Formulario de cadastro */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
 /* Grid de livros */
 .books-grid {
   display: grid;
@@ -404,5 +412,45 @@ body {
 
   .avaliacao-container {
     flex-direction: column;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .header-title {
+    font-size: 24px;
+    padding: 16px 20px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .reaction-group {
+    flex-wrap: wrap;
+  }
+
+  .emoji-btn {
+    font-size: 24px;
+  }
+
+  .biblioteca-hero {
+    padding: 24px !important;
+  }
+
+  .biblioteca-hero-icon {
+    font-size: 40px !important;
+  }
+
+  .biblioteca-hero-title {
+    font-size: 28px !important;
+    letter-spacing: 1px !important;
   }
 }

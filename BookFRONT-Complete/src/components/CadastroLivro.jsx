@@ -137,12 +137,7 @@ function CadastroLivro({ usuarioId }) {
           </h2>
 
           <form onSubmit={handleSubmit}>
-            <div style={{ 
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '30px',
-              marginBottom: '30px'
-            }}>
+            <div className="form-grid">
               <div>
                 <div className="input-group">
                   <label className="input-label">Título</label>
